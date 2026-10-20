@@ -3,48 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KELAS IX - INFORMATIKA FUN</title>
+    <title>INFORMATIKA FUN - Kelas VII</title>
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Font Awesome CDN -->
+    <!-- Google Fonts: Quicksand & Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Google Fonts: Plus Jakarta Sans -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
     <style>
+        /* Mengunci halaman agar tepat 1 layar dan tidak ada scroll */
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #567C9C; 
-            color: #FFFFFF;
-        }
-
-        /* Gaya Kartu Tombol Disesuaikan (Biru Dongker + Garis Hijau Mint) */
-        .glass-card-dark {
-            background-color: #283E56;
-            border: 1.5px solid #78B89E;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        /* Efek Interaktif Hover pada Tombol */
-        .interactive-btn {
-            transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
-            position: relative;
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
             overflow: hidden;
+            background-color: #4A7298; /* Solid Denim Blue */
+            font-family: 'Quicksand', 'Poppins', sans-serif;
+            color: #ffffff;
         }
 
-        .interactive-btn:hover {
+        /* Gaya Kartu Disesuaikan (Solid Navy Blue + Border Hijau Mint) */
+        .bento-card {
+            background-color: #1E3A5F;
+            border: 2px solid #88D4AB;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .bento-card:hover {
             transform: translateY(-2px) scale(1.005);
-            background-color: #304964;
-            border-color: #92CDB5;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+            background-color: #23436b;
+            border-color: #A3E4C2;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
         }
 
-        .interactive-btn:active {
+        .bento-card:active {
             transform: scale(0.98);
         }
 
@@ -53,8 +51,8 @@
             position: absolute;
             pointer-events: none;
             user-select: none;
-            opacity: 0.12;
-            animation: floatAnimation 14s infinite ease-in-out;
+            opacity: 0.15;
+            animation: floatAnimation 12s infinite ease-in-out;
             color: #FFFFFF;
         }
 
@@ -63,30 +61,29 @@
             50% { transform: translateY(-15px) rotate(8deg); }
         }
 
-        /* Ripple Effect CSS (Warna Mint Green) */
+        /* Efek Ripple */
         .ripple {
             position: absolute;
             border-radius: 50%;
+            background: rgba(136, 212, 171, 0.35);
             transform: scale(0);
-            animation: ripple-effect 0.6s linear;
-            background-color: rgba(120, 184, 158, 0.35);
+            animation: ripple-anim 0.5s linear;
             pointer-events: none;
         }
 
-        @keyframes ripple-effect {
+        @keyframes ripple-anim {
             to { transform: scale(4); opacity: 0; }
         }
     </style>
 </head>
-<!-- h-screen & overflow-hidden mengunci halaman pas 1 layar tanpa scroll -->
 <body class="h-screen w-screen overflow-hidden flex flex-col justify-between relative px-4 py-3">
 
     <!-- Floating Background Tech Icons -->
     <div class="bg-float-item text-3xl top-6 left-[6%]" style="animation-delay: 0s;">&lt;/&gt;</div>
     <div class="bg-float-item text-2xl top-[20%] right-[8%]" style="animation-delay: 2s;">010110</div>
-    <div class="bg-float-item text-4xl top-[40%] left-[4%]" style="animation-delay: 4s;"><i class="fa-solid fa-diagram-project"></i></div>
-    <div class="bg-float-item text-3xl top-[60%] right-[6%]" style="animation-delay: 1s;"><i class="fa-solid fa-wifi"></i></div>
-    <div class="bg-float-item text-4xl top-[80%] left-[8%]" style="animation-delay: 3s;"><i class="fa-solid fa-cloud"></i></div>
+    <div class="bg-float-item text-4xl top-[42%] left-[4%]" style="animation-delay: 4s;"><i class="fa-solid fa-diagram-project"></i></div>
+    <div class="bg-float-item text-3xl top-[62%] right-[6%]" style="animation-delay: 1s;"><i class="fa-solid fa-wifi"></i></div>
+    <div class="bg-float-item text-4xl top-[82%] left-[8%]" style="animation-delay: 3s;"><i class="fa-solid fa-cloud"></i></div>
 
     <!-- MAIN CONTAINER -->
     <div class="w-full max-w-xl mx-auto flex flex-col justify-between h-full z-10 py-1">
@@ -96,203 +93,148 @@
             <!-- Logo Paling Atas Tengah (Ukuran Diperkecil) -->
             <img src="https://cdn.phototourl.com/member/2026-10-20-301bf8f0-f5cd-4de0-a3fd-b9b3a2d0e3e0.png" alt="Logo Informatika Fun" class="mx-auto w-16 md:w-20 mb-1 drop-shadow-md">
 
-            <!-- Main Title -->
+            <!-- Title -->
             <h1 class="text-2xl md:text-3xl font-extrabold text-white tracking-tight leading-tight uppercase">
-                KELAS IX
+                KELAS VII
             </h1>
 
             <!-- Subtitle -->
-            <p class="text-xs md:text-sm text-slate-200 font-medium">
-                Pembelajaran Informatika – Kelas IX
+            <p class="text-xs md:text-sm text-gray-200 font-semibold">
+                Pembelajaran Informatika – Kelas VII
             </p>
             
-            <div class="w-12 h-0.5 bg-[#78B89E] mx-auto mt-1 rounded-full"></div>
+            <div class="w-12 h-0.5 bg-[#88D4AB] mx-auto mt-1 rounded-full"></div>
         </header>
 
-        <!-- BUTTONS CONTAINER (8 TOMBOL MENU RAMPING) -->
-        <main class="space-y-1.5 md:space-y-2 my-auto">
+        <!-- BUTTONS CONTAINER (6 TOMBOL MENU KELAS VII) -->
+        <main class="space-y-2 my-auto">
             
             <!-- Tombol 1 -->
-            <button onclick="handleButtonClick('https://riski902-alt.github.io/MATERIBAB-I-KELASIX/', event)" class="w-full glass-card-dark interactive-btn rounded-xl p-2 md:p-2.5 flex items-center gap-3 group">
-                <div class="btn-icon-wrapper flex-shrink-0 w-8 h-8 md:w-9 md:h-9 rounded-lg text-[#78B89E] flex items-center justify-center text-base md:text-lg">
-                    <i class="fa-solid fa-network-wired"></i>
+            <a href="https://riski902-alt.github.io/MATERIBAB-I-KELASVII/" class="w-full bento-card rounded-xl p-2.5 md:p-3 flex items-center gap-3 group relative overflow-hidden" onclick="createRipple(event)">
+                <div class="btn-icon-wrapper flex-shrink-0 w-8 h-8 md:w-9 md:h-9 rounded-lg text-[#88D4AB] flex items-center justify-center text-base md:text-lg">
+                    <i class="fas fa-database"></i>
                 </div>
-                <div class="flex-grow min-w-0">
-                    <h2 class="text-xs md:text-sm font-bold text-white text-left leading-tight">
-                        Bab 1: Berpikir Komputasional dalam Pemecahan Masalah
+                <div class="flex-grow min-w-0 text-left">
+                    <h2 class="text-xs md:text-sm font-bold text-white leading-tight">
+                        Bab 1: Konsep dan Analisis Data Terstruktur
                     </h2>
                 </div>
-                <div class="hidden sm:flex text-[#78B89E] opacity-70 group-hover:opacity-100 transition-opacity pr-1">
+                <div class="hidden sm:flex text-[#88D4AB] opacity-70 group-hover:opacity-100 transition-opacity pr-1">
                     <i class="fa-solid fa-chevron-right text-xs"></i>
                 </div>
-            </button>
+            </a>
 
             <!-- Tombol 2 -->
-            <button onclick="handleButtonClick('https://riski902-alt.github.io/MATERIBAB-II-KELASIX/', event)" class="w-full glass-card-dark interactive-btn rounded-xl p-2 md:p-2.5 flex items-center gap-3 group">
-                <div class="btn-icon-wrapper flex-shrink-0 w-8 h-8 md:w-9 md:h-9 rounded-lg text-[#78B89E] flex items-center justify-center text-base md:text-lg">
-                    <i class="fa-solid fa-globe"></i>
+            <a href="https://riski902-alt.github.io/MATERIBAB-II-KELASVII/" class="w-full bento-card rounded-xl p-2.5 md:p-3 flex items-center gap-3 group relative overflow-hidden" onclick="createRipple(event)">
+                <div class="btn-icon-wrapper flex-shrink-0 w-8 h-8 md:w-9 md:h-9 rounded-lg text-[#88D4AB] flex items-center justify-center text-base md:text-lg">
+                    <i class="fas fa-search"></i>
                 </div>
-                <div class="flex-grow min-w-0">
-                    <h2 class="text-xs md:text-sm font-bold text-white text-left leading-tight">
-                        Bab 2: Ruang Publik Virtual &amp; Diseminasi Konten
+                <div class="flex-grow min-w-0 text-left">
+                    <h2 class="text-xs md:text-sm font-bold text-white leading-tight">
+                        Bab 2: Literasi Informasi dan Pencarian Digital
                     </h2>
                 </div>
-                <div class="hidden sm:flex text-[#78B89E] opacity-70 group-hover:opacity-100 transition-opacity pr-1">
+                <div class="hidden sm:flex text-[#88D4AB] opacity-70 group-hover:opacity-100 transition-opacity pr-1">
                     <i class="fa-solid fa-chevron-right text-xs"></i>
                 </div>
-            </button>
+            </a>
 
             <!-- Tombol 3 -->
-            <button onclick="handleButtonClick('https://riski902-alt.github.io/MATERIBAB-III-KELASIX/', event)" class="w-full glass-card-dark interactive-btn rounded-xl p-2 md:p-2.5 flex items-center gap-3 group">
-                <div class="btn-icon-wrapper flex-shrink-0 w-8 h-8 md:w-9 md:h-9 rounded-lg text-[#78B89E] flex items-center justify-center text-base md:text-lg">
-                    <i class="fa-solid fa-shield-halved"></i>
+            <a href="https://riski902-alt.github.io/MATERIBAB-III-KELASVII/" class="w-full bento-card rounded-xl p-2.5 md:p-3 flex items-center gap-3 group relative overflow-hidden" onclick="createRipple(event)">
+                <div class="btn-icon-wrapper flex-shrink-0 w-8 h-8 md:w-9 md:h-9 rounded-lg text-[#88D4AB] flex items-center justify-center text-base md:text-lg">
+                    <i class="fas fa-lightbulb"></i>
                 </div>
-                <div class="flex-grow min-w-0">
-                    <h2 class="text-xs md:text-sm font-bold text-white text-left leading-tight">
-                        Bab 3: Keamanan Digital
+                <div class="flex-grow min-w-0 text-left">
+                    <h2 class="text-xs md:text-sm font-bold text-white leading-tight">
+                        Bab 3: Berpikir Kritis dan Etika Media Digital
                     </h2>
                 </div>
-                <div class="hidden sm:flex text-[#78B89E] opacity-70 group-hover:opacity-100 transition-opacity pr-1">
+                <div class="hidden sm:flex text-[#88D4AB] opacity-70 group-hover:opacity-100 transition-opacity pr-1">
                     <i class="fa-solid fa-chevron-right text-xs"></i>
                 </div>
-            </button>
+            </a>
 
             <!-- Tombol 4 -->
-            <button onclick="handleButtonClick('LINK_SUMATIF_1', event)" class="w-full glass-card-dark interactive-btn rounded-xl p-2 md:p-2.5 flex items-center gap-3 group">
-                <div class="btn-icon-wrapper flex-shrink-0 w-8 h-8 md:w-9 md:h-9 rounded-lg text-[#78B89E] flex items-center justify-center text-base md:text-lg">
-                    <i class="fa-solid fa-list-check"></i>
+            <a href="https://riski902-alt.github.io/MATERIBAB-IV-KELASVII/" class="w-full bento-card rounded-xl p-2.5 md:p-3 flex items-center gap-3 group relative overflow-hidden" onclick="createRipple(event)">
+                <div class="btn-icon-wrapper flex-shrink-0 w-8 h-8 md:w-9 md:h-9 rounded-lg text-[#88D4AB] flex items-center justify-center text-base md:text-lg">
+                    <i class="fas fa-file-alt"></i>
                 </div>
-                <div class="flex-grow min-w-0">
-                    <h2 class="text-xs md:text-sm font-bold text-white text-left leading-tight">
+                <div class="flex-grow min-w-0 text-left">
+                    <h2 class="text-xs md:text-sm font-bold text-white leading-tight">
+                        Bab 4: Aplikasi Perkantoran
+                    </h2>
+                </div>
+                <div class="hidden sm:flex text-[#88D4AB] opacity-70 group-hover:opacity-100 transition-opacity pr-1">
+                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                </div>
+            </a>
+
+            <!-- Tombol 5 -->
+            <a href="#sumatif1" class="w-full bento-card rounded-xl p-2.5 md:p-3 flex items-center gap-3 group relative overflow-hidden" onclick="createRipple(event)">
+                <div class="btn-icon-wrapper flex-shrink-0 w-8 h-8 md:w-9 md:h-9 rounded-lg text-[#88D4AB] flex items-center justify-center text-base md:text-lg">
+                    <i class="fas fa-clipboard-check"></i>
+                </div>
+                <div class="flex-grow min-w-0 text-left">
+                    <h2 class="text-xs md:text-sm font-bold text-white leading-tight">
                         Sumatif Akhir Semester 1
                     </h2>
                 </div>
-                <div class="hidden sm:flex text-[#78B89E] opacity-70 group-hover:opacity-100 transition-opacity pr-1">
+                <div class="hidden sm:flex text-[#88D4AB] opacity-70 group-hover:opacity-100 transition-opacity pr-1">
                     <i class="fa-solid fa-chevron-right text-xs"></i>
                 </div>
-            </button>
+            </a>
 
-            <!-- Tombol 5 -->
-            <button onclick="handleButtonClick('LINK_SUMATIF_2', event)" class="w-full glass-card-dark interactive-btn rounded-xl p-2 md:p-2.5 flex items-center gap-3 group">
-                <div class="btn-icon-wrapper flex-shrink-0 w-8 h-8 md:w-9 md:h-9 rounded-lg text-[#78B89E] flex items-center justify-center text-base md:text-lg">
-                    <i class="fa-solid fa-award"></i>
+            <!-- Tombol 6 -->
+            <a href="#sumatif2" class="w-full bento-card rounded-xl p-2.5 md:p-3 flex items-center gap-3 group relative overflow-hidden" onclick="createRipple(event)">
+                <div class="btn-icon-wrapper flex-shrink-0 w-8 h-8 md:w-9 md:h-9 rounded-lg text-[#88D4AB] flex items-center justify-center text-base md:text-lg">
+                    <i class="fas fa-trophy"></i>
                 </div>
-                <div class="flex-grow min-w-0">
-                    <h2 class="text-xs md:text-sm font-bold text-white text-left leading-tight">
+                <div class="flex-grow min-w-0 text-left">
+                    <h2 class="text-xs md:text-sm font-bold text-white leading-tight">
                         Sumatif Akhir Semester 2
                     </h2>
                 </div>
-                <div class="hidden sm:flex text-[#78B89E] opacity-70 group-hover:opacity-100 transition-opacity pr-1">
+                <div class="hidden sm:flex text-[#88D4AB] opacity-70 group-hover:opacity-100 transition-opacity pr-1">
                     <i class="fa-solid fa-chevron-right text-xs"></i>
                 </div>
-            </button>
-
-            <!-- Tombol 6 -->
-            <button onclick="handleButtonClick('LINK_UJIAN_PAKET_1', event)" class="w-full glass-card-dark interactive-btn rounded-xl p-2 md:p-2.5 flex items-center gap-3 group">
-                <div class="btn-icon-wrapper flex-shrink-0 w-8 h-8 md:w-9 md:h-9 rounded-lg text-[#78B89E] flex items-center justify-center text-base md:text-lg">
-                    <i class="fa-solid fa-file-pen"></i>
-                </div>
-                <div class="flex-grow min-w-0">
-                    <h2 class="text-xs md:text-sm font-bold text-white text-left leading-tight">
-                        Latihan Ujian Sekolah (Paket 1)
-                    </h2>
-                </div>
-                <div class="hidden sm:flex text-[#78B89E] opacity-70 group-hover:opacity-100 transition-opacity pr-1">
-                    <i class="fa-solid fa-chevron-right text-xs"></i>
-                </div>
-            </button>
-
-            <!-- Tombol 7 -->
-            <button onclick="handleButtonClick('LINK_UJIAN_PAKET_2', event)" class="w-full glass-card-dark interactive-btn rounded-xl p-2 md:p-2.5 flex items-center gap-3 group">
-                <div class="btn-icon-wrapper flex-shrink-0 w-8 h-8 md:w-9 md:h-9 rounded-lg text-[#78B89E] flex items-center justify-center text-base md:text-lg">
-                    <i class="fa-solid fa-stopwatch"></i>
-                </div>
-                <div class="flex-grow min-w-0">
-                    <h2 class="text-xs md:text-sm font-bold text-white text-left leading-tight">
-                        Latihan Ujian Sekolah (Paket 2)
-                    </h2>
-                </div>
-                <div class="hidden sm:flex text-[#78B89E] opacity-70 group-hover:opacity-100 transition-opacity pr-1">
-                    <i class="fa-solid fa-chevron-right text-xs"></i>
-                </div>
-            </button>
-
-            <!-- Tombol 8 -->
-            <button onclick="handleButtonClick('LINK_UJIAN_PAKET_3', event)" class="w-full glass-card-dark interactive-btn rounded-xl p-2 md:p-2.5 flex items-center gap-3 group">
-                <div class="btn-icon-wrapper flex-shrink-0 w-8 h-8 md:w-9 md:h-9 rounded-lg text-[#78B89E] flex items-center justify-center text-base md:text-lg">
-                    <i class="fa-solid fa-bullseye"></i>
-                </div>
-                <div class="flex-grow min-w-0">
-                    <h2 class="text-xs md:text-sm font-bold text-white text-left leading-tight">
-                        Latihan Ujian Sekolah (Paket 3)
-                    </h2>
-                </div>
-                <div class="hidden sm:flex text-[#78B89E] opacity-70 group-hover:opacity-100 transition-opacity pr-1">
-                    <i class="fa-solid fa-chevron-right text-xs"></i>
-                </div>
-            </button>
+            </a>
 
         </main>
 
         <!-- FOOTER -->
-        <footer class="pt-2 border-t border-[#78B89E]/30 text-center flex-shrink-0 space-y-0.5">
-            <p class="text-[10px] font-bold tracking-wider text-white uppercase opacity-90">INFORMATIKA FUN</p>
-            <p class="text-[10px] text-slate-200 font-medium opacity-75">By: Riski Amalia, S.Pd.</p>
+        <footer class="pt-2 border-t border-[#88D4AB]/30 text-center flex-shrink-0 space-y-0.5">
+            <p class="text-[10px] sm:text-xs font-bold text-gray-300 opacity-80 tracking-wider">
+                INFORMATIKA FUN @ By: Riski Amalia, S.Pd
+            </p>
         </footer>
 
     </div>
 
-    <!-- Toast Notification -->
-    <div id="toast" class="fixed bottom-4 left-1/2 -translate-x-1/2 bg-[#283E56] border border-[#78B89E] text-white px-4 py-2 rounded-full text-xs font-medium shadow-2xl transition-all duration-300 opacity-0 pointer-events-none translate-y-4 z-50 flex items-center gap-2">
-        <i class="fa-solid fa-circle-notch fa-spin text-[#78B89E]"></i>
-        <span id="toast-text">Membuka halaman...</span>
-    </div>
-
-    <!-- INTERACTIVE JAVASCRIPT -->
+    <!-- Script JavaScript Interaktif (Efek Ripple) -->
     <script>
-        function handleButtonClick(destinationUrl, event) {
+        function createRipple(event) {
             const button = event.currentTarget;
+            
+            const oldRipple = button.querySelector('.ripple');
+            if (oldRipple) {
+                oldRipple.remove();
+            }
 
             const circle = document.createElement("span");
             const diameter = Math.max(button.clientWidth, button.clientHeight);
             const radius = diameter / 2;
 
             const rect = button.getBoundingClientRect();
+            
+            const clientX = event.touches ? event.touches[0].clientX : event.clientX;
+            const clientY = event.touches ? event.touches[0].clientY : event.clientY;
+
             circle.style.width = circle.style.height = `${diameter}px`;
-            circle.style.left = `${event.clientX - rect.left - radius}px`;
-            circle.style.top = `${event.clientY - rect.top - radius}px`;
+            circle.style.left = `${clientX - rect.left - radius}px`;
+            circle.style.top = `${clientY - rect.top - radius}px`;
             circle.classList.add("ripple");
 
-            const existingRipple = button.getElementsByClassName("ripple")[0];
-            if (existingRipple) {
-                existingRipple.remove();
-            }
-
             button.appendChild(circle);
-
-            showToast(`Mengarahkan...`);
-
-            setTimeout(() => {
-                if (destinationUrl.startsWith("http://") || destinationUrl.startsWith("https://")) {
-                    window.location.href = destinationUrl;
-                } else {
-                    console.log("Navigasi ke:", destinationUrl);
-                }
-            }, 350);
-        }
-
-        function showToast(message) {
-            const toast = document.getElementById('toast');
-            const toastText = document.getElementById('toast-text');
-            
-            toastText.textContent = message;
-            toast.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
-            toast.classList.add('opacity-100', 'translate-y-0');
-
-            setTimeout(() => {
-                toast.classList.remove('opacity-100', 'translate-y-0');
-                toast.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
-            }, 2500);
         }
     </script>
 </body>
